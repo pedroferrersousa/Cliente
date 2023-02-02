@@ -1,0 +1,23 @@
+CREATE TABLE Cliente 
+( 
+ Código INT PRIMARY KEY,  
+ Endereço CHAR(n),  
+ Telefone CHAR(n),  
+); 
+
+CREATE TABLE Pessoa física 
+( 
+ Nome CHAR(n) PRIMARY KEY,  
+ Telefone CHAR(n),  
+ idCliente INT,  
+); 
+
+CREATE TABLE Pessoa Jurídica 
+( 
+ Razão Social INT,  
+ CNPJ CHAR(n) PRIMARY KEY,  
+ idCliente INT,  
+); 
+
+ALTER TABLE Pessoa física ADD FOREIGN KEY(idCliente) REFERENCES Cliente (idCliente)
+ALTER TABLE Pessoa Jurídica ADD FOREIGN KEY(idCliente) REFERENCES Cliente (idCliente)
