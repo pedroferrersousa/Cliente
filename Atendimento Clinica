@@ -1,0 +1,35 @@
+CREATE TABLE Medico 
+( 
+ Codigo INT PRIMARY KEY,  
+ Endereço INT,  
+ Nome INT,  
+); 
+
+CREATE TABLE Cliente 
+( 
+ Codigo INT PRIMARY KEY,  
+ Endereço INT,  
+ Nome INT,  
+); 
+
+CREATE TABLE Medicamento 
+( 
+ Codigo INT PRIMARY KEY,  
+ Nome INT,  
+); 
+
+CREATE TABLE Atendimento 
+( 
+ Codigo INT PRIMARY KEY,  
+ Codigo INT,  
+); 
+
+CREATE TABLE Receita 
+( 
+ Dosagem INT,  
+ Codigo INT PRIMARY KEY,  
+); 
+
+ALTER TABLE Atendimento ADD FOREIGN KEY(Codigo) REFERENCES Cliente (Codigo)
+ALTER TABLE Atendimento ADD FOREIGN KEY(Codigo) REFERENCES Medico (Codigo)
+ALTER TABLE Receita ADD FOREIGN KEY(Codigo) REFERENCES Medicamento (Codigo)
